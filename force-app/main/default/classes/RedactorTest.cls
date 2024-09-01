@@ -42,13 +42,13 @@ public class RedactorTest {
     }
      
     private static testmethod void multiMatch() {
-        final string original = 'Redact the next token 123-45-4891 but leave rest';
-        final string expected = 'Redact the next token ###SSN### but leave rest';
+        final string original = 'Redact the next token 123-45-4891 and 702-02-0202 but leave rest';
+        final string expected = 'Redact the next token ###SSN### and ###SSN### but leave rest';
         
         // Placeholder until the implementation is done
         final string result = '';
         
-        // Result string should redact the unwanted token
+        // Result string should redact the unwanted tokens
         System.AssertEquals(expected,result);
     }
     

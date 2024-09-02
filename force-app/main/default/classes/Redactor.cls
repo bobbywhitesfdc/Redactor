@@ -24,7 +24,11 @@ public inherited sharing class Redactor {
     
     // Worker method that does the redaction
     public string process(final String input) {
-        // No-op implementation initially
-        return input;
+        if (input == null || input.length()==0) {
+        	return input;
+        } else {
+            // No-op implementation for now
+            return null;
+        }
     }
 }

@@ -80,7 +80,13 @@ public class RedactorTest {
      * Helper method to initialize the redactor for this test
      **/ 
     private static Redactor getRedactor() {
-        return new Redactor();
+        final List<RedactorExpression> config = new List<RedactorExpression>();
+        final RedactorExpression exp1 = new RedactorExpression();
+        exp1.matchingExpression='(?!(\\d){3}(-| |)\\1{2}\\2\\1{4})(?!666|000|9\\d{2})(\\b\\d{3}(-| |)(?!00)\\d{2}\\4(?!0{4})\\d{4}\\b)';
+        exp1.redactionExpression='###SSN###';
+        exp1.name='SSN';
+        config.add(exp1);
+        return new Redactor(config);
     }
     
 }
